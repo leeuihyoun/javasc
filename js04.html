@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연산</title>
+</head>
+<body>
+  <script>
+    //변수의 형태(자료형)
+    var 정수 = 3
+    var 실수 = 3.14
+    var 문자열 = "문자를 나열"
+    
+    // 사칙연산 정수 또는 실수
+    var 더하기 = 3 + 3 //6
+    var 빼기 = 10 - 8 //2
+    var 곱하기 = 3 * 3 //9
+    var 나누기 = 10 / 3 //3.333
+    var 나머지구하기 = 10 % 3 // (나머지, remainder)
+    // 변수는 = 을 기준으로 오른쪽에서 사용되면 값으로, 왼쪽은 공간으로 사용된다
+    var 몇일까요 = 곱하기 + 나누기
+
+    console.log(몇일까요)
+    
+    var 변수 = 정수
+    변수 = 변수
+    console.log(변수)  
+
+    var 숫자 = 4
+    숫자 = 숫자
+    숫자 = 숫자 + 1 
+
+    숫자 = 4
+    숫자 = 숫자 + 3
+    console.log(숫자) 
+    숫자 += 3
+    console.log(숫자)
+    숫자 -= 3
+    숫자 *= 3
+    숫자 /= 3
+    숫자 %= 3
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+</head>
+<body>
+  
+  <script>
+    // 변수 : 값을 저장하는 공간
+    // 함수 : 코드를 저장하는 공간
+    function 함수1(){
+      console.log("Hello World!")
+    }
+    함수1()
+    함수1()
+    함수1()
+    //함수로 코드를 저장하는데 그때그때 바꿔주고 싶은 부분이 있다
+    //소괄호를 이용 ==> 소괄호에 변수를 만들어둔다
+    
+    function 함수2(매개변수){
+      console.log("Hello " + 매개변수 + "!")
+
+    }
+    함수2("피카츄")
+    함수2("라이츄")
+    함수2("꼬북이")
+
+    function 더하기(num1, num2){
+      let 덧셈결과 = num1 + num2 //let : {} 안에서는 let
+      console.log(덧셈결과)
+    }
+    var 전역변수 = 3 //중괄호 {} 밖에서는 var
+
+    더하기(2,3)
+    더하기(4,3)
+  
+    function 빼기 (num1, num2){
+      let 뺄셈결과 = num1 - num2
+      console.log(뺄셈결과)
+      return "뺄셈이 정상적으로 완료되었습니다."
+    }
+    var 결과 = 빼기(10,7)
+    console.log("함수의 실행 결과 : " + 결과)
+  </script>
+</body>
+</html>
