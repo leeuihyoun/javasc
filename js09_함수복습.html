@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수와함수</title>
+<style>
+  .box-class{
+    background: yellowgreen;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <div class="box-class" id="my-box-id">
+    <p id="box-text">버튼을 누르면 창이 열립니다.</p>
+    <button onclick="상자닫기()">닫기</button>
+  </div>
+  
+  <button onclick="상자열기('아이디를 입력하세요')">열기</button>
+  <button onclick="상자열기('비밀번호를 입력하세요')">열기2</button>
+  
+  
+  <script>
+    //  함수 : function 코드를 저장하는 구간
+    //  변수 : var, let, const, 값을 저장하는 공간
+    //  매개변수 : 함수(코드를 저장한 공간)에서 그때그때 바꿔주고 싶은 부분이 있다 함수의 소괄호에 넣는다
+
+    function 상자열기(매개변수){
+      document.getElementById('box-text').innerHTML= 매개변수;
+      document.getElementById('my-box-id').style.display= 'block'; 
+    }
+    
+    function 상자닫기(){
+      const boxElement = document.getElementById('my-box-id')
+      boxElement.style.display = 'none'
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+</head>
+<body>
+  
+  
+  <script>
+    var 공간이름 = '값'
+    //공간을 처음 생성할때는 var / let / const 를 앞에 적어준다
+    //이미 만들어진 공간은 이름만 적어준다
+
+    // 변수의 type
+    // 
+    var 정수 = 3
+    var 실수 = 3.14
+    var 문자열 = "데이터값"
+    var 불린 = true //참거짓 
+    // 조건 = 어떤 코드가 실행되게 할지 결정하는것
+    // if(){}
+    
+    if(정수 == 3){
+      console.log("()안에 true가 들어가면 실행할 코드")
+    }
+    if(false){
+      console.log("이부분은 무시가 됩니다")
+    }     
+    console.log(10 > 3); 
+    console.log(10 < 3); 
+    console.log(30 >= 3); 
+    console.log(30 <= 3); 
+    console.log(30 == 30);  
+    console.log(30 != 30); 
+    console.log(30 === '30') //자료형까지 같은지 검사
+    console.log(30 !== '30')
+
+    //비교를 하면 결과가 true 또는 false
+    var 결과 = 0;
+    function 큰값검사(num1, num2){
+      if(num1 > num2){
+        return "첫번째 숫자가 더 큽니다."
+      }else if(num1 < num2){
+        return "두번째 숫자가 더 큽니다"
+      }else{
+        return "두 수는 같습니다."
+      }// return을 만나면 함수는 그 즉시 종료됨
+    }
+    결과 = 큰값검사(11,4)
+    console.log(결과)
+    결과 = 10
+    if(결과 >5){
+      console.log("5보다 큽니다")
+
+    }else{
+      console.log("5보다 크지 않습니다")
+    }
+
+    var 나이 = 15
+    function 성인인가요(나이){
+    if(나이 >= 20){
+      return "성인입니다"
+    }else{
+      return "미성년자 입니다"
+    }
+  }
+  결과 = 성인인가요(24)
+  console.log(결과)    
+    
+  if(true){
+    console.log("if 1번째")
+    if(true){
+      console.log("if 2번째")
+    }
+  }
+  var age =15
+  if(age < 5){
+    console.log('버스요금 : 0원')
+  }else if(age >= 5 && age < 14){
+    console.log('버스요금 : 500원')
+  }else if(age >= 14 && age < 20){
+    console.log('버스요금 : 750원')
+  }else if(age >= 20 && age < 75){
+    console.log('버스요금 : 1000원')
+  }else if(age >= 75){
+    console.log('버스요금 : 0원')
+  }
+
+  //놀이 기구 
+  //130미만 => 탑승
+  //130이상 190미만
+
+  // && : and 그리고
+  // || : or 또는
+  var height = 0
+  function 놀이기구(height){
+    if(height < 130){
+      return "탑승불가"
+    }else if(height >= 130 && height <= 190){
+      return "탑승가능"
+    }else if(height > 190){
+      return "탑승불가"
+    }
+  }
+  결과 = 놀이기구(190)
+  console.log(결과)
+
+  
+  
+  var 글자 = "안녕하세요"
+  function 검사(글자){
+    let 글자수 = 글자.length  
+    if(글자.length >= 3 || 글자.length < 10){
+      return "맞습니다"
+    }else {
+      return "적절하지 않은 글자수 입니다."
+    }
+  }
+  결과 = 검사(글자)
+  console.log(결과)
+</script>
+</body>
+</html>
