@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+  <style>
+    body{
+      margin: 0;
+    }
+   
+    .top-nav{
+      background: lightgray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      
+
+    }
+    .top-nav ul{
+      display: flex;
+      list-style-type: none;
+
+    }
+    .top-nav li{
+      padding: 15px;
+      
+    }
+    .down-nav{
+    
+      background: black;
+      color: white;
+      display: none
+     
+    }
+    .down-nav ul{
+      list-style-type: none;
+      
+    }
+    .down-nav li{
+      
+      padding: 10px;
+      padding-left: 0px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <h2 id="top-logo">로고</h2>
+    <ul id="top-show-logo">
+      <li id ="li-logo">커피</li>
+      <li id ="li-logo">라떼</li>
+      <li id ="li-logo">주스</li>
+      <li id ="li-logo">티</li>
+    </ul>
+  </div>
+  <div id="down-n" class="down-nav">
+    <ul>
+      <p>커피</p>
+      <li>아메리카노</li>
+      <li>콜드브루</li>
+    </ul>
+    <ul>
+      <p>라떼</p>
+      <li>카페 라떼</li>
+      <li>콜드브루라떼</li>
+    </ul>
+  </div>
+
+
+  <script>
+    var flag = 0
+    document.getElementById('top-logo').addEventListener('click',function(){
+      if(flag === 0){
+        flag = 1
+        document.getElementById('down-n').style.display='flex'
+      }else if(flag === 1){
+        flag =0
+        document.getElementById('down-n').style.display='none'
+      }
+      
+      
+    })
+    document.getElementById('top-show-logo').addEventListener('mouseover',function(){
+      if(flag === 0){
+        flag = 1
+        document.getElementById('down-n').style.display='flex'
+      }else if(flag === 1){
+        flag =0
+        document.getElementById('down-n').style.display='none'
+      }
+      
+      
+    })
+    
+    
+  </script>
+</body>
+</html>

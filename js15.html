@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .container{
+      position: relative;
+      width: 400px;
+      border: 1px solid black;
+      height: 100px;
+      
+      
+    }
+    #btn{
+      display: flex;
+      position: absolute;
+      left: 320px;
+      top: 10px;
+    }
+    span{
+      display: block;
+    }
+    
+
+  </style>
+  <div class="container" id="container">
+    <p>javaScript</p>
+    <button id="btn">다크 모드</button>
+    <div> <span>올해 년도는?</span>
+      <input type="text" id="submit-text" ><button id="submit-btn">제출</button>
+    </div>
+   
+  </div>
+  <script>
+    document.getElementById("btn").addEventListener("click",function(){
+      document.getElementById("container").style.backgroundColor = "black"
+      document.getElementById("container").style.color = "white"
+      
+
+    })
+    document.getElementById('submit-btn').addeventlistener('click',function(){
+      let 입력값 = document.getElementById('submit-text').value
+      if(입력값 === "2024"){
+        alert("정답입니다")
+      }else{
+        alert("오답입니다")
+      }
+    })
+  </script>
+</body>
+</html>
