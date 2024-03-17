@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탭기능</title>
+</head>
+<body>
+  <style>
+    .top-ul{
+      display: flex;
+      list-style: none;
+      
+    }
+    .tab_button{
+      padding: 10px;
+      border-bottom: 1px solid lightgray;
+     
+    }
+    .tab-selected{
+      border: 1px solid lightgray;
+      border-top: 1px solid orange;
+      border-bottom: none;
+
+    }
+    .tab_content{
+      
+      
+      border-top: none;
+      
+    }
+    .display_none{
+      display: none;
+    }
+
+  </style>
+    <div >
+      <ul class="top-ul">
+        <li class="tab_button ">탭1</li>
+        <li class="tab_button">탭2</li>
+        <li class="tab_button">탭3</li>
+        
+      </ul>
+      <div class="tab_content ">
+        탭1 내용
+      </div>
+      <div class="tab_content ">
+        탭2 내용
+      </div>
+      <div class="tab_content">
+        탭3 내용
+      </div>
+    </div>
+    
+      
+   <script>
+      var arr = document.querySelectorAll('.tab_button').length
+      
+      for(let a=0; a<arr; a++){
+        document.querySelectorAll('.tab_button')[a].addEventListener('click',function(){
+        for(let i=0; i<3;i++){
+          document.querySelectorAll('.tab_content')[i].classList.add('display_none')
+          document.querySelectorAll('.tab_button')[i].classList.remove('tab-selected')
+          
+        }
+        document.querySelectorAll('.tab_content')[a].classList.remove('display_none')
+          document.querySelectorAll('.tab_button')[a].classList.add('tab-selected')
+      })
+      }
+      
+      // document.querySelectorAll('.tab_button')[1].addEventListener('click',function(){
+      //   for(let i=0; i<3;i++){
+      //     document.querySelectorAll('.tab_content')[i].classList.add('display_none')
+      //     document.querySelectorAll('.tab_button')[i].classList.remove('tab-selected')
+          
+      //   }
+      //   document.querySelectorAll('.tab_content')[1].classList.remove('display_none')
+      //     document.querySelectorAll('.tab_button')[1].classList.add('tab-selected')
+      // })
+      // document.querySelectorAll('.tab_button')[2].addEventListener('click',function(){
+      //   for(let i=0; i<3;i++){
+      //     document.querySelectorAll('.tab_content')[i].classList.add('display_none')
+      //     document.querySelectorAll('.tab_button')[i].classList.remove('tab-selected')
+          
+      //   }
+      //   document.querySelectorAll('.tab_content')[2].classList.remove('display_none')
+      //     document.querySelectorAll('.tab_button')[2].classList.add('tab-selected')
+      // })
+   </script>
+  
+</body>
+</html>

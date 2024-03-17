@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이더</title>
+</head>
+<body>
+  <style>
+    body{
+      margin: 0;
+    }
+    .slider-img{
+      display: flex;
+      width: 300%;
+      transition: all 1s;
+
+    }
+    .slider-container{
+      overflow: hidden;
+      width: 400px;
+      height: 200px;
+    }
+    .box{
+      width: 100%;
+    }
+    .box img{
+      width: 100%;
+    }
+    .slider-first{
+      margin-left: 0;
+    }
+    .slider-second{
+      margin-left: -100%;
+    }
+    .slider-third{
+      margin-left: -200%;
+    }
+  </style>
+  <div class="slider-container">
+    <div class="slider-img">
+      <div class="box">
+        <img src="./img/img1.jpg" alt="">
+
+      </div>
+      <div class="box">
+        <img src="./img/img2.jpg" alt="">
+
+      </div>
+      <div class="box">
+        <img src="./img/img3.jpg" alt="">
+
+      </div>
+    </div>
+  </div>
+  <button class="slide-btn">1</button>
+  <button class="slide-btn">2</button>
+  <button class="slide-btn">3</button>
+
+  <script>
+       
+       for(let a=0; a<3; a++){
+        document.querySelectorAll('.slide-btn')[a].addEventListener('click',function(){
+        if(a==0){
+          document.querySelector('.slider-img').classList.remove('slider-second')
+          document.querySelector('.slider-img').classList.remove('slider-third')
+          document.querySelector('.slider-img').classList.add('slider-first')
+        }else if(a==1){
+          document.querySelector('.slider-img').classList.remove('slider-first')
+          document.querySelector('.slider-img').classList.remove('slider-third')
+          document.querySelector('.slider-img').classList.add('slider-second')
+        }else if(a==2){
+          document.querySelector('.slider-img').classList.remove('slider-first')
+          document.querySelector('.slider-img').classList.remove('slider-second')
+          document.querySelector('.slider-img').classList.add('slider-third')
+        }
+        
+      })
+      }
+   
+  </script>
+</body>
+</html>
