@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .product-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product {
+            border: 1px solid black;
+            display: flex;        
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            display: block;
+            background-color: lightgray; 
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="product">
+            <div>
+                <img src="#" alt="">
+                <div class="product-content">
+                    <h3>상품명</h3>
+                    <p>가격: 0000원</p>
+                    <button>결제하기</button>
+                </div>
+            </div>
+            <div>
+                <img src="#" alt="">
+                <div class="product-content">
+                    <h3>상품명</h3>
+                    <p>가격: 0000원</p>
+                    <button>결제하기</button>
+                </div>
+            </div>
+            <div>
+                <img src="#" alt="">
+                <div class="product-content">
+                    <h3>상품명</h3>
+                    <p>가격: 0000원</p>
+                    <button>결제하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var 상품정보 = [
+                {
+                    '상품명' : '아메리카노',
+                    '가격' : 3000
+                },
+                {
+                    '상품명' : '카페라떼',
+                    '가격' : 4500
+                },
+                {
+                    '상품명' : '주스',
+                    '가격' : 4000
+                }
+            ];
+
+            var 상품갯수 = document.querySelectorAll('.product-content').length;
+			console.log(상품갯수)
+
+            for(let i=0; i<상품갯수; i++){
+                document.querySelectorAll('.product-content h3')[i].innerHTML= 상품정보[i]['상품명'];
+                document.querySelectorAll('.product-content p')[i].innerHTML= '가격 :'+상품정보[i]['가격'] + '원';
+				
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		//웹통신(HTTP통신) 에 주로 사용되는 변수의 자료형 ==> 객체
+		var 객체;
+		객체 = {
+			
+
+		}
+		console.log(객체['상품명'])
+		//판매된 커피리스트를 다른쪽에 알려주고 싶다
+		// 아메카노3잔 9000원 + 카페라떼9000원
+
+		var 판매리스트 = 
+		{
+			 총금액 : 18000,
+			 "판매상세" :[
+				{
+					"상품명" : "아메리카노",
+					"갯수" : 3,
+					"총금액" : 9000
+				},
+				{
+					"상품명" : "카페라떼",
+					"갯수" : 2,
+					"총금액" : 9000
+				}
+			 ]
+		}
+		console.log(판매리스트['판매상세'])
+		
+		var 객체2 = {
+			'키워드' : '저장할값',
+			'키워드3' : 3.14,
+			'키워드3' : [],
+			키워드4:{}
+		}
+		console.log(`키워드${4}`)
+		console.log(`키워드${3}`)
+
+	</script>
+</body>
+</html>

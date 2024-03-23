@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+	<button id="temp"></button>
+<body>
+	<script>
+	변수2 = () => {} //ArrowFunction
+	변수3 = e => {} //매개변수가 1개면 () 생략가능
+		// document.getElementById('temp').addEventListener(('click'),()=>{
+		// 	alert('temp')
+		// })
+		document.getElementById('temp').addEventListener('click',function(e){
+			console.log(e.target)
+		})
+	</script>
+</body>
+</html>

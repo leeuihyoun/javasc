@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			background-color: blanchedalmond;
+		}
+		.container-nav{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: beige;
+			box-sizing: border-box;
+			padding: 0 25px;
+			border: 1px solid black;
+			z-index: 5;
+			width: 100%;
+			position: fixed;
+			height: 80px;
+			transition: all 0.5s;
+		}
+		.container-nav ul{
+			display: flex;
+			list-style: none;
+		}
+		.container-nav li{
+			padding: 0 10px;
+		}
+		.container-nav li a{
+			color: black;
+			text-decoration: none;
+		}
+		.container-content{
+			height: 800px;
+			border: 2px solid black;
+		}
+		.sticky-box{
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+			position: sticky;
+			top: 100px;
+			left: 70%;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container-nav">
+		<h3>로고</h3>
+		<ul>
+			<li><a href="#">홈</a></li>
+			<li><a href="#">소개</a></li>
+			
+		</ul>
+
+	</div>
+	<div style="height: 80px;"></div>
+	<div class="container-content">
+
+		<div class="sticky-box">스티키</div>
+	</div>
+	<div class="container-content"><div class="sticky-box">스티키</div></div>
+	<div class="container-content"><div class="sticky-box">스티키</div></div>
+<script>
+	
+	window.addEventListener('scroll',function(){
+		scrolls = window.scrollY
+		console.log(scrolls)
+		if(scrolls > 200){
+			document.querySelector('.container-nav h3').style.fontSize = '10px';
+			document.querySelector('.container-nav h3').style.color = 'red';
+			
+		}else{
+			document.querySelector('.container-nav h3').style.fontSize = '19px';
+			document.querySelector('.container-nav h3').style.color = 'black';
+		}
+	})
+    
+</script>
+</body>
+</html>

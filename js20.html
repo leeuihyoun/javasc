@@ -27,13 +27,13 @@
     .box img{
       width: 100%;
     }
-    .slider-first{
+    .slider-page-1{
       margin-left: 0;
     }
-    .slider-second{
+    .slider-page-2{
       margin-left: -100%;
     }
-    .slider-third{
+    .slider-page-3{
       margin-left: -200%;
     }
   </style>
@@ -53,30 +53,26 @@
       </div>
     </div>
   </div>
-  <button class="slide-btn">1</button>
-  <button class="slide-btn">2</button>
-  <button class="slide-btn">3</button>
+  <button class="slide-btn-1">1</button>
+  <button class="slide-btn-2">2</button>
+  <button class="slide-btn-3">3</button>
+
+  <br><br>
+  <button id="toggle-auto-slide">스크롤 중지</button>
 
   <script>
-       
-       for(let a=0; a<3; a++){
-        document.querySelectorAll('.slide-btn')[a].addEventListener('click',function(){
-        if(a==0){
-          document.querySelector('.slider-img').classList.remove('slider-second')
-          document.querySelector('.slider-img').classList.remove('slider-third')
-          document.querySelector('.slider-img').classList.add('slider-first')
-        }else if(a==1){
-          document.querySelector('.slider-img').classList.remove('slider-first')
-          document.querySelector('.slider-img').classList.remove('slider-third')
-          document.querySelector('.slider-img').classList.add('slider-second')
-        }else if(a==2){
-          document.querySelector('.slider-img').classList.remove('slider-first')
-          document.querySelector('.slider-img').classList.remove('slider-second')
-          document.querySelector('.slider-img').classList.add('slider-third')
-        }
-        
-      })
+      var curSilde=0;
+      for(let i = 1; i <= 3;i++){
+        document.getElementById(`slide-btn-${i}`).addEventListener('click', function(){
+          document.querySelector('.slider-img').classList.remove('slider-page-1','slider-page-2','slider-page-3');
+          document.querySelector('slider-img').classList.add(`slider-page-${i}`);
+        })
       }
+      setInterval(function(){
+        curSlide = (curSlide+1) % 3
+        document.querySelector('.slider-img').classList.remove('slider-page-1','slider-page-2','slider-page-3');
+        document.querySelector('.slider-img').classList.add(`slider-page-${curSlide+1}`);
+      },3000)
    
   </script>
 </body>
