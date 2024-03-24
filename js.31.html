@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	
+</style>
+<body>
+	<div class="btn-box">
+		<button id="get-btn">get요청</button>
+		<button id="post-btn">post요청</button>
+		<button id="clear-btn">지우기</button>
+	</div>
+
+	<div id="box">
+
+	</div>
+
+	<script>
+
+	fetch('https://httpbin.org/get')
+		.then(res => res.json()) //응답받으면 json 문자열로 리턴해라
+		.then(data =>{
+			console.log(data)
+			let boxco = `<p>${data['url']}</p>`;
+		
+			document.getElementById('get-btn').addEventListener("click",()=>{
+				document.getElementById('box').insertAdjacentHTML('beforeend',boxco);
+				
+			})
+			
+
+		})
+		.catch(err =>{
+			//위에서 예외상황이 발생하면 다 무시하고 일로 들어와
+			console.error('에러발생',err)
+		})
+		fetch('https://httpbin.org/post',{
+			
+			method:'POST', 
+			headers:{
+				"Content-Type":"application/json",
+			},
+			body:JSON.stringify(
+				{
+				
+				}
+			)
+		})
+		.then(res=> res.json())
+		.then(data=>{
+			console.log(data)
+			let da = `<p>${JSON.stringify(data)}</p>`
+			document.getElementById('post-btn').addEventListener("click",()=>{
+				document.getElementById('box').insertAdjacentHTML('beforeend',da);
+			})
+		})
+		.catch(err=> console.error('에러발생!!',err))
+
+		document.getElementById('clear-btn').addEventListener("click",()=>{
+			document.getElementById('box').innerHTML=''
+		})
+	</script>
+</body>
+</html>

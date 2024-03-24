@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+	
+	</div>
+	<button id="add-content">글추가</button>
+
+	<script>
+		//자바스크립트로 태그추가
+
+		let ptage = document.createElement('p')
+		ptage.innerHTML= '안녕하세요'
+		document.getElementById('box').appendChild(ptage)
+		//변수에 HTML태그처럼 넣어 버리기
+		let 변수 = 0;
+		let boxcod = `<p class="font=yellow">자바스크립트로  태그추가${변수}</p>`;
+		let boxscod = `<h3 class="font=yellow">자바스크립트로  태그추가${변수}</h3>`;
+
+		document.getElementById('box').insertAdjacentHTML('beforeend',boxcod);
+		document.getElementById('box').insertAdjacentHTML('beforeend',boxcod);
+		document.getElementById('box').insertAdjacentHTML('beforeend',boxcod);
+		document.getElementById('add-content').addEventListener('click',()=>{
+			document.getElementById('box').insertAdjacentHTML('beforeend',boxscod);
+		})
+	</script>
+</body>
+</html>
