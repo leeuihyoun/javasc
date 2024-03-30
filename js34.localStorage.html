@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="입력값">
+	<button id="저장">저장하기</button>
+	<button id="추가" on>추가하기</button>
+	<div id="name"></div>
+
+	<script>
+		var str = '저장하고 싶은 글자'
+
+		//페이지를 새로고침 하거나 새로 열었을 때도 유지하고 싶은 데이터가 있다?
+		//웹에서 제공하는 localStorage 를 활용할 수 있음
+		str = localStorage.getItem('이름')
+		console.log(str)
+		// localStorage.setItem('키', '170.0')
+
+		//JSON : 웹에서 배열이나 객체를 사용하기 위한 문자욜 형식
+		// 배열, 객체 => JSON으로 변경해서 웹에 적용
+		// 배열 -> JSON문자열
+
+		//localStorage.removeItem('키')
+		document.getElementById('저장').addEventListener('click',() => {
+			let 입력값 = document.getElementById('입력값').value;
+			localStorage.setItem('이름',입력값);
+			document.getElementById('name').innerHTML = 입력값;
+		})
+		str = [1,2,3]
+		str = JSON.stringify(str) // 배열 -> JSON문자열(웹에서 사용하기 위해)
+		var json문자열 = '{}'
+		JSON.parse(json문자열) //JSON문자열 -> 배열(객체) (자바스크립트 변수로 사용하기 위해)
+
+		document.getElementById('추가').addEventListener('click', () =>{
+			let 임시변수 = localStorage.getItem('저장값')
+			//배열에 값을 하나 더 추가한 다음 json문자열로 바꿔서 setItem
+			임시변수 = JSON.parse(임시변수) //JSON글자형식 -> 배열
+			const 마지막숫자증가 = 임시변수[임시변수.length -1] +1
+			임시변수.push(마지막숫자증가)
+			
+			// // 임시변수.pop();
+			// 임시변수.splice(2, 1);
+			// 임시변수.push(4);
+			임시변수 = JSON.stringify(임시변수) // 배열 -> JSON글자형식
+
+			localStorage.setItem('저장값', 임시변수)
+		})
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body{
+		margin : 0;
+
+	}
+	div, input, textarea{
+		box-sizing: border-box;
+	}
+	.grid-container{
+		display: grid;
+		width: 300px;
+		height: 300px;
+	
+		grid-template-areas: 
+		"위쪽 위쪽 왼쪽2" 
+		"위쪽 위쪽 왼쪽3" 
+		"왼쪽4 왼쪽5 왼쪽6";
+	}
+	.grid-container div{
+		border: 2px solid yellowgreen;
+		
+	}
+	.first{
+		
+		grid-area: 위쪽;
+	}
+	.second{
+		grid-area: 왼쪽2;
+	}
+	.third{
+		grid-area: 왼쪽3;
+	}
+	.fi{
+		grid-area: 왼쪽4;
+	}
+	.fo{
+		grid-area: 왼쪽5;
+	}
+	.si{
+		grid-area: 왼쪽6;
+	}
+	@media screen and (max-width:768px){
+		.grid-container{
+		width: 300px;
+		height: 300px;
+	
+		grid-template-areas: 
+		"위쪽" 
+		"왼쪽2" 
+		"왼쪽3"
+		"왼쪽4"
+		"왼쪽5"
+		"왼쪽6"
+		;
+	}
+	}
+</style>
+<body>
+	<!-- <div class="grid-container">
+		<div class="inner first">1</div>
+		<div class="inner second">2</div>
+		<div class="inner third">3</div>
+	
+	</div> -->
+
+	<div class="grid-container">
+		<div class="inner first"><img src="https://picsum.photos/500?r=0"alt="" width="100%" height="100%"></div>
+		<div class="inner second"><img src="https://picsum.photos/500?r=1"alt="" width="100%" height="100%"></div>
+		<div class="inner third"><img src="https://picsum.photos/500?r=2"alt="" width="100%" height="100%"></div>
+		<div class="inner fi"><img src="https://picsum.photos/500?r=3"alt="" width="100%" height="100%"></div>
+		<div class="inner fo"><img src="https://picsum.photos/500?r=4"alt="" width="100%" height="100%"></div>
+		<div class="inner si"><img src="https://picsum.photos/500?r=5"alt="" width="100%" height="100%"></div>
+	</div>
+	
+
+	
+
+	
+</body>
+</html>
