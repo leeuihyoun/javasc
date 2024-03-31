@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//spread operator : 분할가능 ( 배열과 오브젝트를 분할)
+		// ...으로 사용
+		//1. 배열 배겁
+		//2. 배열 합치기
+
+
+		var 오브젝트1 =
+		{
+			'키1':'값1',
+			'키2':[1,2,3],
+			'키3':{},
+			'키4':[
+				{},
+				{},
+				{}
+			]
+		}
+		
+		
+		var 오브젝트2= {...오브젝트1};//오브젝트를 해체했다가 새로운 오브젝트로 만든다
+		오브젝트1['키1'] = '대입'
+		console.log(오브젝트1);
+		console.log(오브젝트2);
+
+		var 오브젝트3 = {
+			'키4' :1,
+			'키5' :3
+		}
+		//오브젝트1과 오브젝트3을 합치겟따 ...사용
+		var 오브젝트5 = {...오브젝트1, ...오브젝트3};
+		console.log(오브젝트5);	
+		
+		// ... 이 function의 매개변수로 사용되면
+		var 배열5 = [1,2,3]
+		 
+		function 함수1(num1,num2,num3){
+			console.log(숫자1)
+			console.log(숫자2)
+			console.log(숫자3)
+		}
+		함수1(...배열5)
+		함수1(배열5[0],배열5[1],배열5[2])
+	
+	</script>
+</body>
+</html>

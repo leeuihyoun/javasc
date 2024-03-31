@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>오브젝트 생성자</title>
+</head>
+<body>
+	
+	<script>
+
+		// 함수를 만들때 this를 사용해서 값을 넣으면
+		// 오브젝트가 생성
+		function 오브젝트생성기(){
+			//키값은 앞에 this. 을 붙이고
+			//value = 으로 대입하듯이
+			this.name = '홍길동',
+			this.나이 =19
+		}
+		//오브젝트생성기를 new해서 사용할 때마다 오브젝트가 만들어 진다. constructor
+		var 오브젝트2 = new 오브젝트생성기()
+		console.log(오브젝트2)
+		console.log(오브젝트2['name'])
+		function 오브젝트생성기2(name, age){
+			this.name = name,
+			this.age = age
+		}
+
+		var 오브젝트3 = new 오브젝트생성기2('유관순',19)
+		var 오브젝트4 = new 오브젝트생성기2('홍길동',20)
+
+		console.log(오브젝트3)
+		console.log(오브젝트4)
+		//constructor롤 생성된 오브젝트에 항목을 추가
+		오브젝트생성기2.prototype.키 = '값123'
+		오브젝트생성기2.prototype.추가 = '값2'
+
+		console.log(오브젝트3.키)
+		console.log(오브젝트4.키)
+		console.log(오브젝트4.__proto__)
+
+		var 배열 = [1,2,3]
+		console.log(배열.length)
+		console.log(배열.__proto__)
+	</script>
+</body>
+</html>

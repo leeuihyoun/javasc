@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var 공간1 = "값을 저장하는 공간";
+		let 공간2 = "for버그 해결";
+		const 공간3 = "한번 정하면 못바꿈"
+
+		공간1 = "다시 대입"
+		//저장된 값을 자용하려면 그냥 이름만 적어 준다
+		공간1
+
+		//사용할때마다 바꿔주고 싶은 코드가 있다 . 안에다가 변수를 만들어놓는다
+		var total = 0;
+
+		function sum(num1, num2){
+			return num1+num2;
+		}
+		console.log(sum(3,2));
+		
+		let fruits = ["사과","바나나","체리"];
+		fruits.forEach((요소, 순번)=>{
+			console.log(요소)
+			console.log(순번)
+		})
+		var 오브젝트 = {
+			'a' : "1",
+			'b' : '2'
+		}
+	</script>
+</body>
+</html>

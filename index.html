@@ -27,13 +27,13 @@
             </div>
             <div class="second-nav">
               <ul>
-                <li><a href="#">COFFEE</a></li>
-                <li><a href="#">MENU</a></li>
-                <li><a href="#">STORE</a></li>
-                <li><a href="#">RESPONSIBILITY</a></li>
-                <li><a href="#">STARBUCKSREWARDS</a></li>
-                <li><a href="#">CORPORATE SALES</a></li>
-                <li><a href="#">WHAT`S NEW</a></li>
+                <li class="down-show"><a href="#">COFFEE</a></li>
+                <li class="down-show"><a href="#">MENU</a></li>
+                <li class="down-show"><a href="#">STORE</a></li>
+                <li class="down-show"><a href="#">RESPONSIBILITY</a></li>
+                <li class="down-show"><a href="#">STARBUCKSREWARDS</a></li>
+                <li class="down-show"><a href="#">CORPORATE SALES</a></li>
+                <li class="down-show"><a href="#">WHAT`S NEW</a></li>
               </ul>
             </div>
 
@@ -93,6 +93,25 @@
     <img src="./imges/item4.png" alt="" class="product2">
     <img src="./imges/item5.png" alt="" class="product3">
   </div>
+  <div class="section-9">
+    <div class="back-black">
+      <h3>공지사항</h3>
+      <ul>
+        <li>개인정보처리방침</li>
+        <li class="display-none">이용약관</li>
+        <li class="display-none">점검 안내</li>
+       
+      </ul>
+      <div class="back-black-icon"><i class="fa-solid fa-plus"></i></div>
+      
+    </div>
+    <div class="back-white">
+      <p>스타벅스 프로모션</p>
+      <div class="back-white-icon"><i class="fa-solid fa-angle-down"></i></div>
+      
+    </div>
+  </div>
+
   <div class="section-2"></div>
   <div class="section-3"></div>
   <div class="section-4"></div>
@@ -100,6 +119,56 @@
   <div class="section-6"></div>
   <div class="section-7"></div>
   <div class="section-8"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+    var a_flag = [false,false,false,false,false,false,false]
+    var down_flag = false;
+    document.querySelector('.top-nav-inner').addEventListener('mouseover', ()=>{
+    
+    })
+    document.querySelectorAll('.down-show')[0].addEventListener('mouseenter',(e)=>{
+      //마우스가 들어갔을 때 down-nav의 높이를 변경하고, visible롤 변경
+      a_flag[0]=true;
+    })
+    document.querySelectorAll('.down-show')[0].addEventListener('mouseleave',(e)=>{
+      //마우스가 나갔을떼 때 down-nav의 높이를 변경하고, visible롤 변경
+      down_flag= true;
+      a_flag[0]=false;
+    })
+    document.querySelector('.down-nav').addEventListener('mouseleave', (e)=>{
+      down_flag= false;
+      
+    })
+    //50ms로 변수값을 체크를 해서 true면 down-nav를 보이게
+    setInterval(function(){
+      if(a_flag[0] == false && down_flag == false){
+        document.querySelector('.down-nav').classList.remove('down-nav-show')
+        document.querySelectorAll('.second-nav a')[0].classList.remove('second-nav-show')
+      }else{
+        document.querySelector('.down-nav').classList.add('down-nav-show')
+        document.querySelectorAll('.second-nav a')[0].classList.add('second-nav-show')
+      }
+    }, 50)
+  </script>
   
 </body>
 </html>
