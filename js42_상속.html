@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		//상속 : 물려주는거
+		//클래스가 갖고 있는거 : 함수와 변수를 물려준다
+		class 부모{
+			constructor(name, age){
+				this.name = name;
+				this.age = age;
+			}
+			
+			요리하기(){
+				console.log(`${this.name}은 요리를 합니다`	)
+			}
+			두발걷기(){
+				console.log('두발로 걷습니다.')
+			}
+		}
+		class 자식 extends 부모{
+			constructor(name,age){
+				super(name,age)
+			}
+		
+			용돈받기(){
+				console.log('용돈 주세요');
+			}
+			//수정(오버라이딩) : 함수의 이름과 배개변수를 그대로 따라하고 내용만 바꿈
+			요리하기(){
+				console.log('맛있게 요리합니다.')
+			}
+			
+		}
+
+
+	</script>
+</body>
+</html>

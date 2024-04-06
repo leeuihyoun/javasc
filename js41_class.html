@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		//class : 클래스 (묶음)
+		//주제에 맞게 변수와 함수를 묶는다
+		// 사람에 대한 변수와 함수만 묶어서 보관하겠다
+		class 사람{
+			//클래스는 주제에 맞게 함수와 변수를 보관하는 묶음
+
+			sayHello(){
+				console.log('안녕하세요');
+			}
+		}
+		class 강아지{
+			//constructor : 클래스의 생성자 ==> 클래스 처음 생성할 때 사용되는
+			constructor(age,name){
+				//new해서 찍어내는 순간 발동하는 함수
+				//객체찍어내는 constructor랑은 다른 문법
+				this.강아지나이 = age;
+				this.강아지이름 = name;
+				
+			}
+			sayHello(){
+				console.log('멍멍')
+			}
+		}
+		class 원숭이{
+			//클래스는 주제에 맞게 함수와 변수를 보관하는 묶음
+
+			sayHello(){
+				console.log('우끼끼');
+			}
+		}
+		var 홍길동 = new 사람();
+		var 유관순 = new 사람();
+		var 김유신 = new 사람();
+
+		var 몽키1 = new 원숭이();
+		var 몽키2 = new 원숭이();
+		var 몽키3 = new 원숭이();
+		
+		홍길동.sayHello()
+		유관순.sayHello()
+		몽키1.sayHello()
+		몽키2.sayHello()
+		
+		var dog = new 강아지(3,'멍멍멍')
+		dog.sayHello()
+		console.log(dog.강아지나이)
+		console.log(dog.강아지이름)
+
+	</script>
+	
+</body>
+</html>

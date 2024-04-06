@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button id="text-load">텍스트 파일 읽기</button>
+	<button class="getImg">이미지 가져오기</button>
+
+	<script>
+		//함수 앞에 async를 적어주면 promise처럼 사용이 가능
+		// async function 함수명(){
+		// 	console.log('함수 사용');
+		// }
+		// 함수명().then(function(){
+		// 	console.log('함수 사용 이후')
+		// })
+
+		//async의 결과를 then에 전달하고 싶으명 return
+
+		async function 사이트에서가져오기(){
+			let 응답 = await fetch('https://httpbin.org/get')
+			if(응답.ok){
+				let data = await 응답.text()
+
+			}
+		}
+		
+		//Primise 긴작업을 대기, async 긴 작업을 대기
+		//await : async 함수 내에서 긴 작업을 대기시키고 싶을 때
+		document.getElementById('text-load').addEventListener('click',파일읽기)
+		async function  파일읽기(){
+			//비동기(주 작업에 영향이 안가게 별도 작업)fetch
+			// await 해당 작업이 끝날때까지 기다림(.then)
+			// fetch 작ㄱ업이 끝날때까지 기다림
+			try{let 결과값 = await fetch('텍스트파일.txt')
+			if(!결과값.ok){
+				throw new Error('')
+			}
+
+			let 파일내용 = await 결과값.text();
+		console.log(파일내용);
+	}catch(e){
+			console.log('실패')
+		}
+			
+		}
+		
+	
+	</script>
+</body>
+</html>
